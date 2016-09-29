@@ -58,22 +58,28 @@
 
 <ion-pane>
         <ion-header>
-        <div class="bar bar-header bar-light">
+        <div class="bar bar-header bar-stable">
              <h1 class="title">Welcome to The anxiety App</h1>
         </div>
         </ion-header>
     
-    <ion-content class="has-header">
+    <ion-content class="has-header bg">
         <div class = "row">
-            <div class="col text-center">
-                <button class = "homeButton button button-block button-positive" id="info" onclick="infoSwitch()"> Background Info </button>
-                <br>
-                <button class = "button button-block button-positive" id="info" onclick="infoSwitch()"> Exercise </button>
-                <br>
-                <button class = "button button-block button-positive" id="info" onclick="infoSwitch()"> Tracking </button>
-                <br>
-                <button class = "button button-block button-positive" id="info" onclick="infoSwitch()"> Resources </button>
 
+            <div class="col-50 col-offset-25 text-center"style = "color:white">
+                <p> This is a bunch of disclaimer text, 
+                   People search for this Lorem ipsum dummy copy text using all kinds of names, such as Lorem ipsum, lorem ipsum dolor sit amet, Lorem, dummy text, loren ipsum (yes, spelled wrong), Lorem ipsum sample textipsum loremlorem ipsum sample, Latin copy text, Lorem ipsum text, Latin dummy text, template text, sample text, dummy copy text, Latin sample text, HTML dummy text, Lorem ipsum dummy text, filler text or copy filling text, and many other names. Regardless of what you wish to call it, this tex
+
+
+
+                    Do you accept?
+                </p>
+
+                 <div class="col-50 col-offset-25 text-center"style = "color:white">
+                    <button class = "button  button-assertive " id="info" onclick="blah()"> Decline </button>
+                    <button class = "button  button-balanced " id="info" onclick="accept()"> Accept </button>
+
+                </div>
             </div>
         </div>
 
@@ -87,7 +93,7 @@
 
         
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/disclaimer.js"></script>
     <script type="text/javascript" src="js/angular/angular.js"></script>
     <script type="text/javascript" src="js/ionic.bundle.min.js"></script>
 
