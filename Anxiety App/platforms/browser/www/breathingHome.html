@@ -66,14 +66,43 @@
     <ion-content class="has-header bg">
         <div class = "row centerTop">
 
-            <div class="col-50 col-offset-25 text-center">
-                <button class = "button button-block homeB" onclick="infoSwitch()"> Getting Started </button>
-                <br>
-                <button class = "button button-block homeB" onclick="exercise()"> Exercise </button>
-                <br>
-                <button class = "button button-block homeB" onclick="infoSwitch()"> Tracking </button>
-                <br>
-                <button class = "button button-block homeB" onclick="infoSwitch()"> Resources </button>
+            <div class="col-80 col-offset-10 text-center">
+                <p style = "color:white"> Customize your breathing exercise</p>
+
+                   <label class = "item item-input item-select item-stable">
+                      <div class = "input-label">
+                         Duration of Exercise
+                      </div>
+                      <select id="duration" name="duration">
+                         <option value="1">1 minutes</option>
+                         <option value="2">2 minutes</option>
+                         <option value="3" selected= "true">3 minutes</option>
+                         <option value="4">4 minutes</option>
+                         <option value="5">5 minutes</option>
+                         <option value="6">6 minutes</option>
+                         <option value="7">7 minutes</option>
+                         <option value="8">8 minutes</option>
+                         <option value="9">9 minutes</option>
+                         <option value="10">10 minutes</option>
+                      </select>
+                   </label>
+
+                   <label class = "item item-input item-select item-stable">
+                      <div class = "input-label">
+                         Length of Breath
+                      </div>
+                      <select id="length" name="length">
+                         <option value="10">10 seconds</option>
+                         <option value="15">15 seconds</option>
+                         <option value="20" selected= "true">20 seconds</option>
+                         <option value="25">25 seconds</option>
+                         <option value="30">30 seconds</option>
+
+                      </select>
+                   </label>
+                <a class="button button-balanced" onclick="startBreathing()">Accept</a>
+
+
 
             </div>
         </div>
@@ -83,13 +112,9 @@
 </ion-pane>
 </body>
 
-
-
-
-        
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/homeScreen.js"></script>
     <script type="text/javascript" src="js/angular/angular.js"></script>
+    <script type="text/javascript" src="js/breathingHome.js"></script>
     <script type="text/javascript" src="js/ionic.bundle.min.js"></script>
 
 
@@ -100,6 +125,8 @@
 angular.module('anxietyApp', ['ionic'])
 
 .controller('MyCtrl', function($scope) {
+
+    
 });
 </script>
 

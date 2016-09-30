@@ -64,18 +64,28 @@
         </ion-header>
     
     <ion-content class="has-header bg">
-        <div class = "row centerTop">
+        <div class = "row">
 
-            <div class="col-50 col-offset-25 text-center">
-                <button class = "button button-block homeB" onclick="infoSwitch()"> Getting Started </button>
-                <br>
-                <button class = "button button-block homeB" onclick="exercise()"> Exercise </button>
-                <br>
-                <button class = "button button-block homeB" onclick="infoSwitch()"> Tracking </button>
-                <br>
-                <button class = "button button-block homeB" onclick="infoSwitch()"> Resources </button>
-
+            <div class="col-80 col-offset-10 text-center">
+                <p style = "color:white"> This is used to track your SUD level, for more information read LINK</p>
+                <ion-list>
+                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="1">1 - non-existant</ion-radio>
+                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="2">2 - Very minimal</ion-radio>
+                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="3">3 - minor</ion-radio>
+                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="4">4 - moderate</ion-radio>
+                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="5">5 - high</ion-radio>
+                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="6">6 - very high</ion-radio>
+                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="7">7 - extreme</ion-radio>
+                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="8">8 - extremely high</ion-radio>
+                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="9">9 - omg high</ion-radio>
+                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="10">10 - beyond high</ion-radio>
+                </ion-list>
+                <button class = "button button-block button-calm" ng-disabled="!user.answer" ng-click="submitAnswer(user)">Submit</button>
             </div>
+
+
+
+           
         </div>
 
 
@@ -88,7 +98,7 @@
 
         
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/homeScreen.js"></script>
+    <script type="text/javascript" src="js/sudTrack.js"></script>
     <script type="text/javascript" src="js/angular/angular.js"></script>
     <script type="text/javascript" src="js/ionic.bundle.min.js"></script>
 
@@ -100,6 +110,21 @@
 angular.module('anxietyApp', ['ionic'])
 
 .controller('MyCtrl', function($scope) {
+      $scope.submitAnswer=function(user){
+
+    //alert(user.answer);
+    //insert storing value here
+    var reason = window.localStorage.getItem("reason");
+    //alert(reason);
+    if (reason == "breathing"){
+            window.location.href = "breathingHome.html";
+
+    }else{
+        alert("Only Breathing is working right now");
+    }
+
+
+  }
 });
 </script>
 

@@ -67,13 +67,10 @@
         <div class = "row centerTop">
 
             <div class="col-50 col-offset-25 text-center">
-                <button class = "button button-block homeB" onclick="infoSwitch()"> Getting Started </button>
+                <button class = "button button-block homeB" id="info" onclick="breathing()"> Breathing </button>
                 <br>
-                <button class = "button button-block homeB" onclick="exercise()"> Exercise </button>
-                <br>
-                <button class = "button button-block homeB" onclick="infoSwitch()"> Tracking </button>
-                <br>
-                <button class = "button button-block homeB" onclick="infoSwitch()"> Resources </button>
+                <button class = "button button-block homeB" id="info" onclick="infoSwitch()"> Exercise </button>
+
 
             </div>
         </div>
@@ -83,13 +80,9 @@
 </ion-pane>
 </body>
 
-
-
-
-        
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/homeScreen.js"></script>
     <script type="text/javascript" src="js/angular/angular.js"></script>
+    <script type="text/javascript" src="js/exerciseHome.js"></script>
     <script type="text/javascript" src="js/ionic.bundle.min.js"></script>
 
 
@@ -100,6 +93,8 @@
 angular.module('anxietyApp', ['ionic'])
 
 .controller('MyCtrl', function($scope) {
+
+    
 });
 </script>
 

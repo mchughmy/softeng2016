@@ -52,3 +52,8 @@
     function infoSwitch(){
         alert("Hi");
     }
+
+    function exercise(){
+        window.location.href = "exerciseHome.html";
+
+    }
