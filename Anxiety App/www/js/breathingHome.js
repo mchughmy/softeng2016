@@ -1,4 +1,5 @@
 function startBreathing(){
 	var duration =document.getElementById("duration").value;
-	alert(duration);
+	window.location.href = "breathingExercise.html";
+
 }
