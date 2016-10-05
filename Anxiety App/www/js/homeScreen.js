@@ -57,3 +57,10 @@
         window.location.href = "exerciseHome.html";
 
     }
+
+
+    function resources(){
+        window.location.href = "resources.html";
+
+    }
+
