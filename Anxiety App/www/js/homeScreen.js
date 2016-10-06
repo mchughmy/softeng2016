@@ -60,6 +60,9 @@
 
     function tracking(){
         window.location.href = "trackingHome.html";
+}
+    function resources(){
+        window.location.href = "resources.html";
 
     }
 
