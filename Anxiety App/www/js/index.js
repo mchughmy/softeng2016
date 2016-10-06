@@ -50,7 +50,7 @@
 };*/
 
 function infoSwitch(){
-        alert("Hi");
+        alert("Feature Not implemented yet");
 }
 
 function back(){
@@ -106,6 +106,16 @@ function resources(){
 
 }
 
+function gettingStarted(){
+        window.location.href = "gettingStarted.html";
+
+}
+
+function videoTest(){
+        window.location.href = "videoTest.html";
+
+}
+
 function finish(){
     alert("Congrats!\nYou finished x minutes of breathing exercise!\nPlease track your current SUD on the next screen");
     localStorage.setItem("reason", "breathingPost");
@@ -117,4 +127,3 @@ function finish(){
     alert(user.answer);
 
   }*/
-  
