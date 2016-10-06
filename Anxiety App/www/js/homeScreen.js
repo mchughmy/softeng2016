@@ -57,3 +57,9 @@
         window.location.href = "exerciseHome.html";
 
     }
+
+    function tracking(){
+        window.location.href = "trackingHome.html";
+
+    }
+
