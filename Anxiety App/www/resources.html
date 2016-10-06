@@ -51,7 +51,8 @@
 <ion-pane>
         <ion-header>
         <div class="bar bar-header bar-stable">
-             <h1 class="title">External Resources</h1>
+            <a class="button icon-left ion-chevron-left button-clear button-dark " onclick="back()">Back</a>
+             <h1 class="title">Anxiety App</h1>
         </div>
         </ion-header>
 
@@ -92,18 +93,43 @@
 
         
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/resources.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/angular/angular.js"></script>
     <script type="text/javascript" src="js/ionic.bundle.min.js"></script>
 
 
     <script type="text/javascript">
         app.initialize();
+
+
+
     </script>
     <script>
 angular.module('anxietyApp', ['ionic'])
 
 .controller('MyCtrl', function($scope) {
+/*document.addEventListener("deviceready", onDeviceReady, false);
+*/
+
+/*function onDeviceReady() {
+    // Register the event listener
+    document.addEventListener("backbutton", backKeyDown, false);
+}
+function backKeyDown(e) { 
+     // Call my back key code here.
+         e.preventDefault();
+
+     alert("blah");
+    window.location.href = "homeScreen.html";
+
+}*/
+
+/*    $ionicPlatform.registerBackButtonAction(function () {
+        
+            navigator.app.backHistory();
+        }
+    }, 100);
+*/
 });
 </script>
 

@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var app = {
+/*var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
@@ -47,8 +47,74 @@ var app = {
         console.log('Received Event: ' + id);
     }
 
-};
+};*/
 
-    function infoSwitch(){
+function infoSwitch(){
         alert("Hi");
-    }
+}
+
+function back(){
+/*    history.go(-1);
+*/    navigator.app.backHistory();
+}
+
+function track(){
+    localStorage.setItem("reason", "track");
+        window.location.href = "sudTrack.html";
+
+}
+
+function report(){
+        alert("Feature Not yet available");
+}
+
+function startBreathing(){
+    var duration =document.getElementById("duration").value;
+    window.location.href = "breathingExercise.html";
+
+}
+
+/*When the user accepts the ToS, they should be taken to the Home Screen*/
+function accept(){
+    window.location.href = "homeScreen.html";
+}
+
+
+/*When the user declines the ToS, the app should close*/
+function decline(){
+    navigator.app.exitApp();
+}
+
+function breathing(){
+
+    localStorage.setItem("reason", "breathing");
+    window.location.href = "sudTrack.html";
+
+}
+
+
+function exercise(){
+        window.location.href = "exerciseHome.html";
+
+}
+
+function tracking(){
+        window.location.href = "trackingHome.html";
+}
+function resources(){
+        window.location.href = "resources.html";
+
+}
+
+function finish(){
+    alert("Congrats!\nYou finished x minutes of breathing exercise!\nPlease track your current SUD on the next screen");
+    localStorage.setItem("reason", "breathingPost");
+    window.location.href = "sudTrack.html";
+}
+
+/*function submitAnswer=function(user){
+
+    alert(user.answer);
+
+  }*/
+  
