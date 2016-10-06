@@ -37,9 +37,9 @@
     * Create your own at http://cspisawesome.com
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
      <link rel="stylesheet" type="text/css" href="css/ionic.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" href="clock2/inc/TimeCircles.css" />
 
 <!--      <link rel="stylesheet" type="text/css" href="css/index.css" />
@@ -67,12 +67,16 @@
     <ion-content class="has-header bg">
         <div class = "row centerTop">
 
-                <div class="col-50 col-offset-25 text-center">
+                <div class="col-50 col-offset-25 text-center shell">
 <!--                   <div class ="timer"> </div>
 
  -->                
-                <div class="demo" data-timer="5">
-                </div>
+                <div class="demo" data-timer="5"></div>
+                <div class="demo2" data-timer="5"></div>
+                <button class = "button button-block homeB" id="info" onclick="finish()"> Finish  </button>
+
+
+
 <!--                 <a class="button button-balanced" ng-click="startTimer()">Accept</a>
  -->
                 </div>
@@ -85,7 +89,7 @@
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/angular/angular.js"></script>
-    <script type="text/javascript" src="js/breathingHome.js"></script>
+    <script type="text/javascript" src="js/breathingExercise.js"></script>
     <script type="text/javascript" src="js/ionic.bundle.min.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="clock2/inc/TimeCircles.js"></script>
@@ -95,13 +99,15 @@
     <script type="text/javascript">
         app.initialize();
 
+        
+
 
 
 
 
     </script>
     <script>
-angular.module('anxietyApp', ['ionic'])
+var app = angular.module('anxietyApp', ['ionic'])
 
 .controller('MyCtrl', function($scope,$interval) {
 
@@ -115,7 +121,7 @@ bg_width: 1.0, // sets the width of the backgroundground circle.
 text_size: 0.07, // This option sets the font size of the text in the circles. 
 total_duration: "custom", // This option can be set to change how much time will fill the largest visible circle.
 direction: "Clockwise", // "Clockwise", "Counter-clockwise" or "Both".
-use_top_frame: false,
+use_top_frame: true,
 start_angle: 0, // This option can be set to change the starting point from which the circles will fill up. 
 time: { //  a group of options that allows you to control the options of each time unit independently.
 Days: {
@@ -174,31 +180,28 @@ text: "Exhale",
 color: "#F99"
 }
 }}
+
+
+
   $scope.inhale = function () {
       $(".demo").TimeCircles(inhale);
-      $(".demo").TimeCircles.destroy;
 
 
     };
 
   $scope.exhale = function () {
-      var inhaleTimer = $(".demo").TimeCircles(exhale);
+      $(".demo2").TimeCircles(exhale);
     };
 
+  $scope.empty = function(){
+          $(".demo").empty();
 
 
+    };
 
     $interval($scope.inhale, 0);
-    //$interval($scope.exhale, 5000);
-
-
-/*$interval(function(){
-  var inhaleTimer = $(".demo").TimeCircles(inhale);
-}, 1000);
-*/
-/*var exhaleTimer = $(".demo").TimeCircles(exhale);
-*/
-
+    $interval($scope.empty, 5000);
+    $interval($scope.exhale, 5001);
     
 });
 </script>

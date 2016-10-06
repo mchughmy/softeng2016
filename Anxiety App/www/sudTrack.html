@@ -112,7 +112,14 @@ angular.module('anxietyApp', ['ionic'])
     if (reason == "breathing"){
             window.location.href = "breathingHome.html";
 
-    }else{
+    }else if(reason == "track"){
+            alert("SUD tracked!");
+            window.location.href = "homeScreen.html";
+
+    }else if(reason =="breathingPost"){
+        window.location.href = "homeScreen.html";
+    }
+    else{
         alert("Only Breathing is working right now");
     }
 

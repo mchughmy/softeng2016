@@ -37,9 +37,9 @@
     * Create your own at http://cspisawesome.com
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
      <link rel="stylesheet" type="text/css" href="css/ionic.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" href="clock2/inc/TimeCircles.css" />
 
 <!--      <link rel="stylesheet" type="text/css" href="css/index.css" />
@@ -71,8 +71,11 @@
 <!--                   <div class ="timer"> </div>
 
  -->                
-                <div class="demo" data-timer="5">
-                </div>
+                <div class="demo" data-timer="5"></div>
+                <div class="demo2" data-timer="5"></div>
+                <button class = "button button-block homeB" id="info" onclick="finish()"> Finish  </button>
+
+
 
 <!--                 <a class="button button-balanced" ng-click="startTimer()">Accept</a>
  -->
@@ -86,7 +89,7 @@
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/angular/angular.js"></script>
-    <script type="text/javascript" src="js/breathingHome.js"></script>
+    <script type="text/javascript" src="js/breathingExercise.js"></script>
     <script type="text/javascript" src="js/ionic.bundle.min.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="clock2/inc/TimeCircles.js"></script>
@@ -187,7 +190,7 @@ color: "#F99"
     };
 
   $scope.exhale = function () {
-      $(".demo").TimeCircles(exhale);
+      $(".demo2").TimeCircles(exhale);
     };
 
   $scope.empty = function(){
