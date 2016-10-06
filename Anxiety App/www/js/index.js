@@ -65,7 +65,8 @@ function track(){
 }
 
 function report(){
-        alert("Feature Not yet available");
+        //alert("Feature Not yet available");
+        window.location.href = "records.html";
 }
 
 function startBreathing(){
@@ -121,6 +122,20 @@ function finish(){
     localStorage.setItem("reason", "breathingPost");
     window.location.href = "sudTrack.html";
 }
+
+
+/* Set the user's "Current SUD" to the passed value*/
+function setCurrentSUD(sud){
+	localStorage.setItem("currentSud", sud);
+}
+
+/*retrieve the user's current SUD value*/
+function getCurrentSUD(){
+	return localStorage.getItem("currentSud");
+}
+
+
+
 
 /*function submitAnswer=function(user){
 

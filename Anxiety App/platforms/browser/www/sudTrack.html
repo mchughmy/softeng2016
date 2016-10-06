@@ -44,7 +44,7 @@
 <!--      <link rel="stylesheet" type="text/css" href="css/index.css" />
  -->
 
-    <title>Anxeity App</title>
+    <title>Enter Your SUD Level</title>
 </head>
 
 
@@ -60,7 +60,7 @@
         <ion-header>
         <div class="bar bar-header bar-stable">
             <a class="button icon-left ion-chevron-left button-clear button-dark " onclick="back()">Back</a>
-             <h1 class="title">Anxiety App</h1>
+             <h1 class="title">Enter Your SUD Level</h1>
         </div>
         </ion-header>
     
@@ -106,6 +106,8 @@ angular.module('anxietyApp', ['ionic'])
 .controller('MyCtrl', function($scope) {
       $scope.submitAnswer=function(user){
 
+    setCurrentSUD(user.answer);
+    //alert(getCurrentSUD());
     //alert(user.answer);
     //insert storing value here
     var reason = window.localStorage.getItem("reason");

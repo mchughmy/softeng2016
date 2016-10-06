@@ -41,44 +41,32 @@
      <link rel="stylesheet" type="text/css" href="css/ionic.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
-<!--      <link rel="stylesheet" type="text/css" href="css/index.css" />
- -->
 
-    <title>Anxeity App</title>
+<title>My Records</title>
 </head>
 
 
-<!--     <div class="app">
- --><!--         <h1>PhoneGap</h1>
-        <div id="deviceready" class="blink">
-            <p class="event listening">Connecting to Device</p>
-            <p class="event received">Device is Ready</p>
-        </div> -->
   <body ng-controller="MyCtrl">
 
 <ion-pane>
         <ion-header>
         <div class="bar bar-header bar-stable">
-             <h1 class="title">Welcome to The anxiety App</h1>
+            <a class="button icon-left ion-chevron-left button-clear button-dark " onclick="back()">Back</a>
+             <h1 class="title">My Records</h1>
         </div>
         </ion-header>
-    
+
     <ion-content class="has-header bg">
         <div class = "row">
 
             <div class="col-50 col-offset-25 text-center"style = "color:white">
-                <p> This is a bunch of disclaimer text, 
-                   People search for this Lorem ipsum dummy copy text using all kinds of names, such as Lorem ipsum, lorem ipsum dolor sit amet, Lorem, dummy text, loren ipsum (yes, spelled wrong), Lorem ipsum sample textipsum loremlorem ipsum sample, Latin copy text, Lorem ipsum text, Latin dummy text, template text, sample text, dummy copy text, Latin sample text, HTML dummy text, Lorem ipsum dummy text, filler text or copy filling text, and many other names. Regardless of what you wish to call it, this tex
+	     <div id="header"></div>
+	     
+		<p>additional metrics should be listed here</p>
 
+               <h4>My History</h4>
+	       <p>Graph goes here</p>
 
-
-                    Do you accept?
-                </p>
-
-                <div class="button-bar ">
-                  <a class="button button-assertive" onclick="decline()">Decline</a>
-                  <a class="button button-balanced" onclick="accept()">Accept</a>
-                </div>
 
             </div>
         </div>
@@ -89,20 +77,50 @@
 </body>
 
 
+
+
+        
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/disclaimer.js"></script>
-    <script type="text/javascript" src="js/locations.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/angular/angular.js"></script>
     <script type="text/javascript" src="js/ionic.bundle.min.js"></script>
 
+    <script type="text/javascript">
+	document.getElementById("header").innerHTML = '<h3>Current SUD: ' + getCurrentSUD() + '</h3>';
+    </script>
 
     <script type="text/javascript">
         app.initialize();
+
+
+
     </script>
     <script>
 angular.module('anxietyApp', ['ionic'])
 
 .controller('MyCtrl', function($scope) {
+/*document.addEventListener("deviceready", onDeviceReady, false);
+*/
+
+/*function onDeviceReady() {
+    // Register the event listener
+    document.addEventListener("backbutton", backKeyDown, false);
+}
+function backKeyDown(e) { 
+     // Call my back key code here.
+         e.preventDefault();
+
+     alert("blah");
+    window.location.href = "homeScreen.html";
+
+}*/
+
+/*    $ionicPlatform.registerBackButtonAction(function () {
+        
+            navigator.app.backHistory();
+        }
+    }, 100);
+*/
 });
 </script>
 

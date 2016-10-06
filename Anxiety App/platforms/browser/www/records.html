@@ -41,53 +41,42 @@
      <link rel="stylesheet" type="text/css" href="css/ionic.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 
-<!--      <link rel="stylesheet" type="text/css" href="css/index.css" />
- -->
 
-    <title>Enter Your SUD Level</title>
+<title>My Records</title>
 </head>
 
 
-<!--     <div class="app">
- --><!--         <h1>PhoneGap</h1>
-        <div id="deviceready" class="blink">
-            <p class="event listening">Connecting to Device</p>
-            <p class="event received">Device is Ready</p>
-        </div> -->
   <body ng-controller="MyCtrl">
 
 <ion-pane>
         <ion-header>
         <div class="bar bar-header bar-stable">
             <a class="button icon-left ion-chevron-left button-clear button-dark " onclick="back()">Back</a>
-             <h1 class="title">Enter Your SUD Level</h1>
+             <h1 class="title">My Records</h1>
         </div>
         </ion-header>
-    
+
     <ion-content class="has-header bg">
         <div class = "row">
 
-            <div class="col-80 col-offset-10 text-center">
-                <p style = "color:white"> This is used to track your SUD level, for more information read LINK</p>
-                <ion-list>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="1">1 - non-existant</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="2">2 - Very minimal</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="3">3 - minor</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="4">4 - moderate</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="5">5 - high</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="6">6 - very high</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="7">7 - extreme</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="8">8 - extremely high</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="9">9 - omg high</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="10">10 - beyond high</ion-radio>
-                </ion-list>
-                <button class = "button button-block button-calm" ng-disabled="!user.answer" ng-click="submitAnswer(user)">Submit</button>
+            <div class="col-50 col-offset-25 text-center"style = "color:white">
+	       <h3>Current SUD: <script>getCurrentSUD();</script></h3><br>
+	      
+		<p>additional metrics should be listed here</p>
+
+               <h4>My History</h4>
+	       <p>Graph goes here</p>
+
+
             </div>
         </div>
+
 
     </ion-content>
 </ion-pane>
 </body>
+
+
 
 
         
@@ -99,35 +88,36 @@
 
     <script type="text/javascript">
         app.initialize();
+
+
+
     </script>
     <script>
 angular.module('anxietyApp', ['ionic'])
 
 .controller('MyCtrl', function($scope) {
-      $scope.submitAnswer=function(user){
+/*document.addEventListener("deviceready", onDeviceReady, false);
+*/
 
-    setCurrentSUD(user.answer);
-    //alert(getCurrentSUD());
-    //alert(user.answer);
-    //insert storing value here
-    var reason = window.localStorage.getItem("reason");
-    //alert(reason);
-    if (reason == "breathing"){
-            window.location.href = "breathingHome.html";
+/*function onDeviceReady() {
+    // Register the event listener
+    document.addEventListener("backbutton", backKeyDown, false);
+}
+function backKeyDown(e) { 
+     // Call my back key code here.
+         e.preventDefault();
 
-    }else if(reason == "track"){
-            alert("SUD tracked!");
-            window.location.href = "homeScreen.html";
+     alert("blah");
+    window.location.href = "homeScreen.html";
 
-    }else if(reason =="breathingPost"){
-        window.location.href = "homeScreen.html";
-    }
-    else{
-        alert("Only Breathing is working right now");
-    }
+}*/
 
-
-  }
+/*    $ionicPlatform.registerBackButtonAction(function () {
+        
+            navigator.app.backHistory();
+        }
+    }, 100);
+*/
 });
 </script>
 
