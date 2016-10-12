@@ -60,8 +60,8 @@
         <div class = "row">
 
             <div class="col-50 col-offset-25 text-center"style = "color:white">
-	       <h3>Current SUD: <script>getCurrentSUD();</script></h3><br>
-	      
+	     <div id="header"></div>
+	     
 		<p>additional metrics should be listed here</p>
 
                <h4>My History</h4>
@@ -85,6 +85,9 @@
     <script type="text/javascript" src="js/angular/angular.js"></script>
     <script type="text/javascript" src="js/ionic.bundle.min.js"></script>
 
+    <script type="text/javascript">
+	document.getElementById("header").innerHTML = '<h3>Current SUD: ' + getCurrentSUD() + '</h3>';
+    </script>
 
     <script type="text/javascript">
         app.initialize();
