@@ -86,6 +86,29 @@ function decline(){
     navigator.app.exitApp();
 }
 
+/* Opens the Cordova inApp Browser and navigates to the passed ur
+*  USAGE: <a onclick="browseToURL('http://www.google.com')">Link Text</a><br>
+*/
+function browseToURL(url) {
+var ref = cordova.InAppBrowser.open(url, '_blank', 'location=yes');
+}
+
+/* Calls up the phone's "Dialer" widget, and preloads the passed Number
+*  It doesn't auto-call the number, the user still needs to click to confirm the callNumber
+*  USAGE: <a onclick="callNumber('7325555555')">732-555-5555</a><br>
+*/
+function callNumber(phoneNumber) {
+window.open('tel:' + phoneNumber,'_system');
+}
+
+/* Opens the phone's NAtive messaging App, for the provided number, and prepares the passed text.
+*  USAGE: <a onclick="sendSms('7325555555', 'Pretty Good')">752-555</a>
+*/
+function sendSms(phoneNumber,bodyText) {
+window.open('sms:' + phoneNumber + '?body=' + bodyText,'_system');
+}
+
+
 function breathing(){
 
     localStorage.setItem("reason", "breathing");

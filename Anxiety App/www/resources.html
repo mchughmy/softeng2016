@@ -62,7 +62,7 @@
             <div class="text-center"style = "color:white">
                <h2 style = "color:white">Sites</h2>
 	       <p>No one wants to experience a crisis, but they do happen. Fortunately, there are people and organizations willing and able to help. Use these resources if you or someone you know is experiencing a crisis. It’s important to identify the correct options and seek help quickly in a crisis situation.   </p><br>
-	      
+
 	       <ul>
 		<li>NAMI, the National Alliance on Mental Illness, is the nation’s largest grassroots mental health organization dedicated to building better lives for the millions of Americans affected by mental illness.</li> <br>
 	       	<li>The National Suicide Prevention Lifeline connects you with a crisis center in the Lifeline network closest to your location. Your call will be answered by a trained crisis worker who will listen empathetically and without judgment. The crisis worker will work to ensure that you feel safe and help identify options and information about mental health services in your area. Your call is confidential and free.</li> <br>
@@ -79,9 +79,9 @@
                <h2 style = "color:white">Hotlines</h2>
 
 	       <ul>
-	       	<li>National Suicide Prevention Lifeline – Call 800-273-TALK (8255)</li>
-	       	<li>Crisis Text Line – Text NAMI to 741-741</li>
-	       	<li>Crisis chat support is available at Online Hotline. Free help, 24/7</li>
+	       	<li>National Suicide Prevention Lifeline – Call <a onclick="callNumber('8002738255')">800-273-TALK (8255)</a></li>
+	       	<li>Crisis Text Line – Text NAMI to <a onclick="sendSms('741741', 'NAMI')">741-741</a></li>
+	       	<li><a onclick="browseToURL('http://www.crisischat.org')">Crisis chat support</a> is available at Online Hotline. Free help, 24/7</li>
 	       </ul>
 
 
@@ -96,7 +96,7 @@
 
 
 
-        
+
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/angular/angular.js"></script>
@@ -120,7 +120,7 @@ angular.module('anxietyApp', ['ionic'])
     // Register the event listener
     document.addEventListener("backbutton", backKeyDown, false);
 }
-function backKeyDown(e) { 
+function backKeyDown(e) {
      // Call my back key code here.
          e.preventDefault();
 
@@ -130,7 +130,7 @@ function backKeyDown(e) {
 }*/
 
 /*    $ionicPlatform.registerBackButtonAction(function () {
-        
+
             navigator.app.backHistory();
         }
     }, 100);
