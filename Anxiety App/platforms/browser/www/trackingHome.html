@@ -63,14 +63,14 @@
              <h1 class="title">Anxiety App</h1>
         </div>
         </ion-header>
-    
+
     <ion-content class="has-header bg">
         <div class = "row centerTop">
 
             <div class="col-50 col-offset-25 text-center">
                 <button class = "button button-block homeB" id="info" onclick="track()"> Track Your SUD </button>
                 <br>
-                <button class = "button button-block homeB" id="info" onclick="report()"> View SUD Records </button>
+                <button class = "button button-block homeB" id="info" onclick="gotoPage('records.html')"> View SUD Records </button>
 
 
             </div>
@@ -95,7 +95,7 @@ angular.module('anxietyApp', ['ionic'])
 
 .controller('MyCtrl', function($scope) {
 
-    
+
 });
 </script>
 

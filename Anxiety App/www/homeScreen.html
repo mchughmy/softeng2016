@@ -56,18 +56,18 @@
              <h1 class="title">Anxiety App</h1>
         </div>
         </ion-header>
-    
+
     <ion-content class="has-header bg">
         <div class = "row centerTop">
 
             <div class="col-50 col-offset-25 text-center">
-                <button class = "button button-block homeB" onclick="gettingStarted()"> Getting Started </button>
+                <button class = "button button-block homeB" onclick="gotoPage('gettingStarted.html')"> Getting Started </button>
                 <br>
-                <button class = "button button-block homeB" onclick="exercise()"> Exercise </button>
+                <button class = "button button-block homeB" onclick="gotoPage('exerciseHome.html')"> Exercise </button>
                 <br>
-                <button class = "button button-block homeB" onclick="tracking()"> Tracking </button>
+                <button class = "button button-block homeB" onclick="gotoPage('trackingHome.html')"> Tracking </button>
                 <br>
-                <button class = "button button-block homeB" onclick="resources()"> Resources </button>
+                <button class = "button button-block homeB" onclick="gotoPage('resources.html')"> Resources </button>
 
             </div>
         </div>
@@ -80,7 +80,7 @@
 
 
 
-        
+
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/angular/angular.js"></script>
@@ -89,7 +89,7 @@
 
     <script type="text/javascript">
         app.initialize();
-        
+
     </script>
     <script>
 angular.module('anxietyApp', ['ionic'])

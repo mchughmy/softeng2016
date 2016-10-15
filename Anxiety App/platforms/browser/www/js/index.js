@@ -64,11 +64,6 @@ function track(){
 
 }
 
-function report(){
-        //alert("Feature Not yet available");
-        window.location.href = "records.html";
-}
-
 function startBreathing(){
     var duration =document.getElementById("duration").value;
     window.location.href = "breathingExercise.html";
@@ -77,7 +72,8 @@ function startBreathing(){
 
 /*When the user accepts the ToS, they should be taken to the Home Screen*/
 function accept(){
-    window.location.href = "homeScreen.html";
+  //we may want to do some other stuff first
+    gotoPage('homeScreen.html');
 }
 
 
@@ -101,11 +97,19 @@ function callNumber(phoneNumber) {
 window.open('tel:' + phoneNumber,'_system');
 }
 
-/* Opens the phone's NAtive messaging App, for the provided number, and prepares the passed text.
+/* Opens the phone's Native messaging App, for the provided number, and prepares the passed text.
 *  USAGE: <a onclick="sendSms('7325555555', 'Pretty Good')">752-555</a>
 */
 function sendSms(phoneNumber,bodyText) {
 window.open('sms:' + phoneNumber + '?body=' + bodyText,'_system');
+}
+
+/* Navigates to a page inside the app.
+*  Use this to navigate to pages which are part of the App (internal pages)
+*  USAGE: <button class = "button button-block homeB" onclick="gotoPage('resources.html')">Button Text</button>
+*/
+function gotoPage(page) {
+  window.location.href = page;
 }
 
 
@@ -116,29 +120,6 @@ function breathing(){
 
 }
 
-
-function exercise(){
-        window.location.href = "exerciseHome.html";
-
-}
-
-function tracking(){
-        window.location.href = "trackingHome.html";
-}
-function resources(){
-        window.location.href = "resources.html";
-
-}
-
-function gettingStarted(){
-        window.location.href = "gettingStarted.html";
-
-}
-
-function videoTest(){
-        window.location.href = "videoTest.html";
-
-}
 
 function finish(){
     alert("Congrats!\nYou finished x minutes of breathing exercise!\nPlease track your current SUD on the next screen");
