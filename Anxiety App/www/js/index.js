@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-/*var app = {
+var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
@@ -47,7 +47,8 @@
         console.log('Received Event: ' + id);
     }
 
-};*/
+};
+
 
 function infoSwitch(){
         alert("Feature Not implemented yet");
@@ -128,21 +129,58 @@ function finish(){
 }
 
 
-/* Set the user's "Current SUD" to the passed value*/
+/* Set the user's "Current SUD" to the passed value
+*  and add an entry to the "SUD History" */
 function setCurrentSUD(sud){
-	localStorage.setItem("currentSud", sud);
+
+    /* get the current sud history, or a blank array if the SUD history is empty */
+    var sudHistory = JSON.parse(localStorage.getItem('sudHistory'));
+
+    if (sudHistory ==  null) {
+      sudHistory = [];
+    }
+
+    var newEntry = {
+      "SUD" : sud,
+      "date" : new Date() /* current date */
+    };
+
+    /* Add new entry to the list */
+    sudHistory.push(newEntry);
+
+    /* Update the list in memory */
+    localStorage.setItem("sudHistory", JSON.stringify(sudHistory));
 }
 
-/*retrieve the user's current SUD value*/
+
+/* retrieve the user's current SUD value.
+*  The value most Recently added to the History */
 function getCurrentSUD(){
-	return localStorage.getItem("currentSud");
+    var sudHistory = JSON.parse(localStorage.getItem("sudHistory"));
+
+    return sudHistory[sudHistory.length-1].SUD;
 }
 
+/* returns the name (file name) of the page the user is currently on
+*  i.e. returns "index.html" while on the said page */
+function getCurrentPage() {
+    var currentPage = window.location.href.split('/');
 
+    return currentPage[currentPage.length-1];
+}
 
+/* Adds support for the phone's PHYSICAL back button.
+*  if we're on the homeScreen, close the App, else just go back a page */
+document.addEventListener("backbutton", function(e){
 
-/*function submitAnswer=function(user){
+  /* override default behavior */
+  e.preventDefault();
 
-    alert(user.answer);
+  if (getCurrentPage() == 'homeScreen.html') {
+    navigator.app.exitApp();
+  } else {
+    back();
+  }
 
-  }*/
+},false);
+/*END Back button support Block */
