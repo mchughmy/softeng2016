@@ -158,7 +158,28 @@ function setCurrentSUD(sud){
 function getCurrentSUD(){
     var sudHistory = JSON.parse(localStorage.getItem("sudHistory"));
 
-    return sudHistory[sudHistory.length-1].SUD;
+    if (sudHistory ==  null) {
+      return null; /* if we don't have a history, return null */
+    } else {
+      return sudHistory[sudHistory.length-1].SUD;
+    }
+}
+
+
+/* returns the AVERAGE SUD value for the entire SUD history */
+function getAverageSUD() {
+  var sudHistory = JSON.parse(localStorage.getItem("sudHistory"));
+  var sudSum = 0;
+
+  if (sudHistory ==  null) {
+    return null;
+  } else {
+    for (var i = 0; i < sudHistory.length; i++) {
+      sudSum += parseInt(sudHistory[i].SUD);
+    }
+
+    return (sudSum/sudHistory.length);
+  }
 }
 
 /* returns the name (file name) of the page the user is currently on
@@ -167,6 +188,14 @@ function getCurrentPage() {
     var currentPage = window.location.href.split('/');
 
     return currentPage[currentPage.length-1];
+}
+
+/* clears localStorage (ALL of it)
+*  erasing the SUD history and any other tracked metrics
+*  useful as a "reset button" during testing
+*  we might want to allow users to clear their records and start fresh */
+function clearAllRecords() {
+    window.localStorage.clear()
 }
 
 /* Adds support for the phone's PHYSICAL back button.

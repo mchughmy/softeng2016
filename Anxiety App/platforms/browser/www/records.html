@@ -57,19 +57,20 @@
         </ion-header>
 
     <ion-content class="has-header bg">
-        <div class = "row">
+      <div class = "row">
 
-            <div class="col-50 col-offset-25 text-center"style = "color:white">
-	     <div id="header"></div>
-	     
-		<p>additional metrics should be listed here</p>
+        <div class="text-left"style = "color:white">
+          <h4 style = "color:white"><u><b>My Stats</b></u></h4>
+          <div id="header"></div>
 
-               <h4>My History</h4>
-	       <p>Graph goes here</p>
+          <p>additional metrics should be listed here</p><br>
+
+          <h4 style = "color:white"><u><b>My History</b></u></h4>
+          <p>Graph goes here</p>
 
 
-            </div>
         </div>
+      </div>
 
 
     </ion-content>
@@ -79,15 +80,29 @@
 
 
 
-        
+
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/angular/angular.js"></script>
     <script type="text/javascript" src="js/ionic.bundle.min.js"></script>
 
     <script type="text/javascript">
-	document.getElementById("header").innerHTML = '<h3>Current SUD: ' + getCurrentSUD() + '</h3>';
+    var stats = '';
+
+    if (!(getCurrentSUD() === null)) {
+      stats += '<u>Current SUD:</u> ' + getCurrentSUD() + '<br>';
+    } else {
+      stats += 'You haven\'t tracked your SUD Yet!';
+    }
+    
+    if (!(getAverageSUD() === null)) {
+      stats += '<u>Average SUD:</u> ' + getAverageSUD().toFixed(2) + '<br>';
+    }
+
+    document.getElementById("header").innerHTML = stats;
+
     </script>
+
 
     <script type="text/javascript">
         app.initialize();
@@ -99,29 +114,8 @@
 angular.module('anxietyApp', ['ionic'])
 
 .controller('MyCtrl', function($scope) {
-/*document.addEventListener("deviceready", onDeviceReady, false);
-*/
-
-/*function onDeviceReady() {
-    // Register the event listener
-    document.addEventListener("backbutton", backKeyDown, false);
-}
-function backKeyDown(e) { 
-     // Call my back key code here.
-         e.preventDefault();
-
-     alert("blah");
-    window.location.href = "homeScreen.html";
-
-}*/
-
-/*    $ionicPlatform.registerBackButtonAction(function () {
-        
-            navigator.app.backHistory();
-        }
-    }, 100);
-*/
 });
+
 </script>
 
 </html>
