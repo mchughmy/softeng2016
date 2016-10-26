@@ -154,14 +154,16 @@ function setCurrentSUD(sud){
 
 
 /* retrieve the user's current SUD value.
-*  The value most Recently added to the History */
+*  The value most Recently added to the History
+*  note: returns the History OBJECT
+*  USAGE: getCurrentSUD().SUD or getCurrentSUD().date */
 function getCurrentSUD(){
     var sudHistory = JSON.parse(localStorage.getItem("sudHistory"));
 
     if (sudHistory ==  null) {
       return null; /* if we don't have a history, return null */
     } else {
-      return sudHistory[sudHistory.length-1].SUD;
+      return sudHistory[sudHistory.length-1];
     }
 }
 
@@ -197,6 +199,15 @@ function getCurrentPage() {
 function clearAllRecords() {
     window.localStorage.clear()
 }
+
+/* given a JSON "date string" returns
+*  the corresponding JavaScript Date Object */
+function getJsDateFromJSON(jsonDate){
+    var jsonDateString = jsonDate
+
+    return new Date(jsonDateString);
+}
+
 
 /* Adds support for the phone's PHYSICAL back button.
 *  if we're on the homeScreen, close the App, else just go back a page */

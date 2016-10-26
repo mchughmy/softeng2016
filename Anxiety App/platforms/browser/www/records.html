@@ -61,14 +61,15 @@
 
         <div class="text-left"style = "color:white">
           <h4 style = "color:white"><u><b>My Stats</b></u></h4>
-          <div id="header"></div>
+          <div id="stats"></div>
 
           <p>additional metrics should be listed here</p><br>
 
           <h4 style = "color:white"><u><b>My History</b></u></h4>
-          <p>Graph goes here</p>
+          <p>Graph goes here</p><br><br><br>
 
-
+          <h4 style = "color:white"><u><b>Options</b></u></h4>
+          <a onclick="clearHistory()">Clear History</a>
         </div>
       </div>
 
@@ -90,17 +91,39 @@
     var stats = '';
 
     if (!(getCurrentSUD() === null)) {
-      stats += '<u>Current SUD:</u> ' + getCurrentSUD() + '<br>';
+      stats += '<u>Current SUD:</u> ' + getCurrentSUD().SUD + '<br>';
+      stats += '<u>Last Entry:</u> ' + getJsDateFromJSON(getCurrentSUD().date).toLocaleString() + '<br>';
+
+      if (!(getAverageSUD() === null)) {
+        stats += '<u>Average SUD:</u> ' + getAverageSUD().toFixed(2) + '<br>';
+      }
+
     } else {
       stats += 'You haven\'t tracked your SUD Yet!';
     }
-    
-    if (!(getAverageSUD() === null)) {
-      stats += '<u>Average SUD:</u> ' + getAverageSUD().toFixed(2) + '<br>';
+
+
+    document.getElementById("stats").innerHTML = stats;
+    </script>
+
+
+    <script type="text/javascript">
+    /* clears SUD History (localStorage), and reloads the page */
+    function clearHistory() {
+
+      navigator.notification.confirm('This will irreversibly delete your entire SUD history!\n\nAre you sure you want to do this?',
+      onConfirm, 'Clear SUD History?', ['Yes, delete it' ,'No, don\'t delete it.']);
+
     }
 
-    document.getElementById("header").innerHTML = stats;
-
+    /*handles the confirm dialog*/
+    function onConfirm(button){
+      if (button == 1) {
+        clearAllRecords();
+        navigator.notification.alert('Your History has been cleared.','')
+        window.location.reload(true);
+      }
+    }
     </script>
 
 
