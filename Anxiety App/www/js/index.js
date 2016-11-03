@@ -203,6 +203,10 @@ function clearAllRecords() {
 /* given a JSON "date string" returns
 *  the corresponding JavaScript Date Object */
 function getJsDateFromJSON(jsonDate){
+  if (jsonDate ==  null) {
+    return null;
+  }
+  
     var jsonDateString = jsonDate
 
     return new Date(jsonDateString);
