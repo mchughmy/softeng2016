@@ -131,7 +131,7 @@ function finish(){
 
 /* Set the user's "Current SUD" to the passed value
 *  and add an entry to the "SUD History" */
-function setCurrentSUD(sud){
+function setCurrentSUD(sud,reason){
 
     /* get the current sud history, or a blank array if the SUD history is empty */
     var sudHistory = JSON.parse(localStorage.getItem('sudHistory'));
@@ -141,8 +141,9 @@ function setCurrentSUD(sud){
     }
 
     var newEntry = {
-      "SUD" : sud,
-      "date" : new Date() /* current date */
+      "SUD"    : sud,
+      "date"   : new Date(), /* current date */
+      "reason" : reason /* reason for tracking SUD */
     };
 
     /* Add new entry to the list */
@@ -206,7 +207,7 @@ function getJsDateFromJSON(jsonDate){
   if (jsonDate ==  null) {
     return null;
   }
-  
+
     var jsonDateString = jsonDate
 
     return new Date(jsonDateString);

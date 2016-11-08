@@ -93,6 +93,7 @@
     if (!(getCurrentSUD() === null)) {
       stats += '<u>Current SUD:</u> ' + getCurrentSUD().SUD + '<br>';
       stats += '<u>Last Entry:</u> ' + getJsDateFromJSON(getCurrentSUD().date).toLocaleString() + '<br>';
+      stats += '<u>Reason for Entry:</u> ' + getCurrentSUD().reason + '<br>';
 
       if (!(getAverageSUD() === null)) {
         stats += '<u>Average SUD:</u> ' + getAverageSUD().toFixed(2) + '<br>';

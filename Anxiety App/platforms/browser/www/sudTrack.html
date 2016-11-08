@@ -104,30 +104,33 @@
 angular.module('anxietyApp', ['ionic'])
 
 .controller('MyCtrl', function($scope) {
-      $scope.submitAnswer=function(user){
+  $scope.submitAnswer=function(user){
 
-    setCurrentSUD(user.answer);
-    //alert(getCurrentSUD());
-    //alert(user.answer);
     //insert storing value here
     var reason = window.localStorage.getItem("reason");
+
+    setCurrentSUD(user.answer,reason);
+
+
     //alert(reason);
-    if (reason == "breathing"){
-            window.location.href = "breathingHome.html";
+    if (reason == "breathing") {
+      gotoPage("breathingHome.html");
 
-    }else if(reason == "track"){
-            alert("SUD tracked!");
-            window.location.href = "homeScreen.html";
+    } else if(reason == "track") {
+      //alert("SUD tracked!");
+      /* returned to homeScreen,
+      *  but it makes more sense to return to trackingHome.html */
+      gotoPage("homeScreen.html");
 
-    }else if(reason =="breathingPost"){
-        window.location.href = "homeScreen.html";
+    } else if(reason =="breathingPost") {
+      gotoPage("homeScreen.html");
     }
-    else{
-        alert("Only Breathing is working right now");
+    else {
+      alert("Only Breathing is working right now");
     }
-
 
   }
+
 });
 </script>
 
