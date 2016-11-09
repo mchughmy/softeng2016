@@ -66,7 +66,8 @@
           <p>additional metrics should be listed here</p><br>
 
           <h4 style = "color:white"><u><b>My History</b></u></h4>
-          <p>Graph goes here</p><br><br><br>
+          <canvas id="historyChart" width="40" height="40"></canvas>
+          <br><br><br>
 
           <h4 style = "color:white"><u><b>Options</b></u></h4>
           <a onclick="clearHistory()">Clear History</a>
@@ -86,6 +87,7 @@
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/angular/angular.js"></script>
     <script type="text/javascript" src="js/ionic.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
 
     <script type="text/javascript">
     var stats = '';
@@ -125,6 +127,92 @@
         window.location.reload(true);
       }
     }
+    </script>
+
+
+
+    <script type="text/javascript">
+    if (!(getCurrentSUD() === null)) {
+    /* set the chart text color to white */
+    Chart.defaults.global.defaultFontColor = 'rgb(255, 255, 255)';
+
+    /* Load SUD history into arrays used by the chart */
+    var sudHistory = JSON.parse(localStorage.getItem("sudHistory"));
+    var labelArray = [];
+    var dataArray = [];
+
+    for (var i = 0; i < sudHistory.length; i++) {
+      labelArray.push("");
+      dataArray.push(sudHistory[i].SUD);
+    }
+
+
+    /* create chart using ChartJs */
+    var ctx = document.getElementById("historyChart");
+
+    var data = {
+      labels: labelArray,
+      datasets: [
+        {
+          label: "SUD",
+          fill: false,
+          lineTension: 0.1,
+          backgroundColor: "rgba(75,192,192,0.4)",
+          borderColor: "rgba(75,192,192,1)",
+          borderCapStyle: 'butt',
+          borderDash: [],
+          borderDashOffset: 0.0,
+          borderJoinStyle: 'miter',
+          pointBorderColor: "rgba(75,192,192,1)",
+          pointBackgroundColor: "#fff",
+          pointBorderWidth: 1,
+          pointHoverRadius: 5,
+          pointHoverBackgroundColor: "rgba(75,192,192,1)",
+          pointHoverBorderColor: "rgba(220,220,220,1)",
+          pointHoverBorderWidth: 2,
+          pointRadius: 1,
+          pointHitRadius: 10,
+          data: dataArray,
+          spanGaps: false,
+        }
+      ]
+    };
+
+    var historyLineChart = new Chart(ctx, {
+      type: 'line',
+      data: data,
+      options: {
+        responsive: true,
+        maintainAspectRatio: true,
+        backgroundColor: 'rgb(255, 255, 255)',
+        title: {
+          display: true,
+          text: 'SUD Progression'
+        },
+        scales: {
+          xAxes: [
+            {
+              gridLines:
+              {
+                show: true,
+                color: 'rgba(255, 255, 255,0.1))'
+              }
+            }
+          ],
+        yAxes: [
+          {
+            gridLines:
+            {
+              show: true,
+              color: 'rgba(255, 255, 255,0.1))'
+            }
+          }
+        ]
+      }
+
+      }
+    });
+  }
     </script>
 
 
