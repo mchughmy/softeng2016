@@ -66,8 +66,10 @@ function track(){
 }
 
 function startBreathing(){
-    var duration =document.getElementById("duration").value;
-    window.location.href = "breathingExercise.html";
+  var durationOfExercise = document.getElementById("duration").value;
+  var lengthOfBreath = document.getElementById("length").value;
+
+  gotoPage("breathingExercise.html?time=" + durationOfExercise + '&breath=' + lengthOfBreath);
 
 }
 
@@ -211,6 +213,25 @@ function getJsDateFromJSON(jsonDate){
     var jsonDateString = jsonDate
 
     return new Date(jsonDateString);
+}
+
+/* returns the named Query Variable from the passed url
+*  returns FALSE if no such value exists
+*  USAGE: getQueryVariable('www.example.com?test=2', 'test') */
+function getQueryVariable(url, queryVarName)
+{
+  var query = url.search.substring(1);
+  var vars = query.split("&");
+
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+
+    if(pair[0] == queryVarName){
+      return pair[1];
+    }
+  }
+
+  return(false);
 }
 
 

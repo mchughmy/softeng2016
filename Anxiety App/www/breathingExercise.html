@@ -108,8 +108,12 @@ var app = angular.module('anxietyApp', ['ionic'])
 
 .controller('MyCtrl', function($scope,$interval) {
 
+
+  var clockTime = parseInt(getQueryVariable(window.location,'breath'));
+    //$(".breathTimer").attr('data-timer',clockTime);
+
   /* create the timer Div */
-  document.getElementById("timer").innerHTML = '<div class="breathTimer" data-timer="5" mode="inhale"></div>';
+  document.getElementById("timer").innerHTML = '<div class="breathTimer" data-timer="' + clockTime + '" mode="inhale"></div>';
 
   $(".breathTimer").TimeCircles({start: true, // determines whether or not TimeCircles should start immediately.
     animation: "smooth", // smooth or ticks. The way the circles animate can be either a constant gradual rotating, slowly moving from one second to the other.
@@ -119,7 +123,7 @@ var app = angular.module('anxietyApp', ['ionic'])
     fg_width: 0.1, //  sets the width of the foreground circle.
     bg_width: 1.0, // sets the width of the backgroundground circle.
     text_size: 0.07, // This option sets the font size of the text in the circles.
-    total_duration: 5, // This option can be set to change how much time will fill the largest visible circle.
+    total_duration: clockTime, // This option can be set to change how much time will fill the largest visible circle.
     direction: "Clockwise", // "Clockwise", "Counter-clockwise" or "Both".
     use_top_frame: false,
     start_angle: 0, // This option can be set to change the starting point from which the circles will fill up.
