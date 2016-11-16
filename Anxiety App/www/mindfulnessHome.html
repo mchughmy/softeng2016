@@ -44,7 +44,7 @@
 <!--      <link rel="stylesheet" type="text/css" href="css/index.css" />
  -->
 
-    <title>Enter Your SUD Level</title>
+    <title>Anxeity App</title>
 </head>
 
 
@@ -60,40 +60,42 @@
         <ion-header>
         <div class="bar bar-header bar-stable">
             <a class="button icon-left ion-chevron-left button-clear button-dark " onclick="back()">Back</a>
-             <h1 class="title">Enter Your SUD Level</h1>
+
+             <h1 class="title">Anxiety App</h1>
         </div>
         </ion-header>
-
+    
     <ion-content class="has-header bg">
-        <div class = "row">
+        <div class = "row centerTop">
 
-            <div class="col-80 col-offset-10 text-left">
-                <p style = "text-align:center; color:white"> This is used to track your SUD level, for more information read LINK</p>
-                <ion-list>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="1">1 - No real distress</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="2">2 -  A little bit sad or off</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="3">3 - Worried</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="4">4 - Negative thoughts</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="5">5 - Upset/uncomfortable</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="6">6 -  Change is needed</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="7">7 - Discomfort dominates </ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="8">8 - Panic takes hold</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="9">9 - Helpless</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="10">10 -  Unbearable</ion-radio>
-                </ion-list>
-                <button class = "button button-block button-calm" ng-disabled="!user.answer" ng-click="submitAnswer(user)">Submit</button>
+            <div class="col-80 col-offset-10 text-center">
+                <p style = "color:white"> Select a Mindfulness Exercise</p>
+
+                   <label class = "item item-input item-select item-stable">
+                      <div class = "input-label">
+                         Select Mindfulness Video
+                      </div>
+                      <select id="videoSelect" name="videoSelect">
+                         <option value="1">5 MINUTE Calming Meditation </option>
+                         <option value="2">10 MINUTE Guided </option>
+
+                      </select>
+                   </label>
+                <a class="button button-balanced" onclick="startMindfulness()">Accept</a>
+
+
+
             </div>
         </div>
+
 
     </ion-content>
 </ion-pane>
 </body>
 
-
-
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/angular/angular.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/ionic.bundle.min.js"></script>
 
 
@@ -104,37 +106,8 @@
 angular.module('anxietyApp', ['ionic'])
 
 .controller('MyCtrl', function($scope) {
-  $scope.submitAnswer=function(user){
 
-    //insert storing value here
-    var reason = window.localStorage.getItem("reason");
-
-    setCurrentSUD(user.answer,reason);
-
-
-    //alert(reason);
-    if (reason == "breathing") {
-      gotoPage("breathingHome.html");
-
-    } else if(reason == "track") {
-      //alert("SUD tracked!");
-      /* returned to homeScreen,
-      *  but it makes more sense to return to trackingHome.html */
-      gotoPage("homeScreen.html");
-
-    } else if(reason =="breathingPost") {
-      gotoPage("homeScreen.html");
-    } else if(reason == "mindfulness"){
-      gotoPage("mindfulnessHome.html");
-    } else if (reason == "mindfulnessPost"){
-      gotoPage("homeScreen.html");
-    }
-    else {
-      alert("Error");
-    }
-
-  }
-
+    
 });
 </script>
 

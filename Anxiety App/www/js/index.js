@@ -67,9 +67,19 @@ function track(){
 
 function startBreathing(){
   var durationOfExercise = document.getElementById("duration").value;
-  var lengthOfBreath = document.getElementById("length").value;
+  var lengthOfInhale = document.getElementById("inhaleL").value;
+  var lengthOfExhale = document.getElementById("exhaleL").value;
 
-  gotoPage("breathingExercise.html?time=" + durationOfExercise + '&breath=' + lengthOfBreath);
+
+  gotoPage("breathingExercise.html?time=" + durationOfExercise + '&inhale=' + lengthOfInhale + '&exhale=' + lengthOfExhale);
+
+}
+
+function startMindfulness(){
+  var video = document.getElementById("videoSelect").value;
+    localStorage.setItem("video", video);
+
+  gotoPage("mindfulnessVideo.html");
 
 }
 
@@ -123,10 +133,18 @@ function breathing(){
 
 }
 
+function mindfulness(){
 
-function finish(){
-    alert("Congrats!\nYou finished x minutes of breathing exercise!\nPlease track your current SUD on the next screen");
-    localStorage.setItem("reason", "breathingPost");
+    localStorage.setItem("reason", "mindfulness");
+    window.location.href = "sudTrack.html";
+
+}
+
+
+
+function finish(reason){
+   // alert("Congrats!\nYou finished x minutes of breathing exercise!\nPlease track your current SUD on the next screen");
+    localStorage.setItem("reason", reason);
     window.location.href = "sudTrack.html";
 }
 

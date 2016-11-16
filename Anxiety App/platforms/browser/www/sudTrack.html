@@ -70,16 +70,16 @@
             <div class="col-80 col-offset-10 text-left">
                 <p style = "text-align:center; color:white"> This is used to track your SUD level, for more information read LINK</p>
                 <ion-list>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="1">1 - non-existant</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="2">2 - Very minimal</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="3">3 - minor</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="4">4 - moderate</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="5">5 - high</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="6">6 - very high</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="7">7 - extreme</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="8">8 - extremely high</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="9">9 - omg high</ion-radio>
-                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="10">10 - beyond high</ion-radio>
+                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="1">1 - No real distress</ion-radio>
+                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="2">2 -  A little bit sad or off</ion-radio>
+                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="3">3 - Worried</ion-radio>
+                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="4">4 - Negative thoughts</ion-radio>
+                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="5">5 - Upset/uncomfortable</ion-radio>
+                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="6">6 -  Change is needed</ion-radio>
+                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="7">7 - Discomfort dominates </ion-radio>
+                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="8">8 - Panic takes hold</ion-radio>
+                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="9">9 - Helpless</ion-radio>
+                  <ion-radio class = "small_button" ng-model="user.answer" ng-value="10">10 -  Unbearable</ion-radio>
                 </ion-list>
                 <button class = "button button-block button-calm" ng-disabled="!user.answer" ng-click="submitAnswer(user)">Submit</button>
             </div>
@@ -124,9 +124,13 @@ angular.module('anxietyApp', ['ionic'])
 
     } else if(reason =="breathingPost") {
       gotoPage("homeScreen.html");
+    } else if(reason == "mindfulness"){
+      gotoPage("mindfulnessHome.html");
+    } else if (reason == "mindfulnessPost"){
+      gotoPage("homeScreen.html");
     }
     else {
-      alert("Only Breathing is working right now");
+      alert("Error");
     }
 
   }
