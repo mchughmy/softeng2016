@@ -163,14 +163,15 @@ var app = angular.module('anxietyApp', ['ionic'])
         $(".breathTimer").TimeCircles({
           circle_bg_color: "#60686F",
           direction: "Counter-Clockwise",
+          total_duration: exhaleTimer,
           time: {
             Seconds: {
               show: true,
               text: "Exhale",
               color: "#F99"}
             }});
-            $(".breathTimer").attr('data-timer','exhaleTimer');
-            $(".breathTimer").attr('total_duration','exhaleTimer');
+
+            $(".breathTimer").data('timer',exhaleTimer);
             $(".breathTimer").attr('mode','exhale');
 
           } else {
@@ -178,15 +179,15 @@ var app = angular.module('anxietyApp', ['ionic'])
             $(".breathTimer").TimeCircles({
               circle_bg_color: "#F99",
               direction: "Clockwise",
+              total_duration: inhaleTimer,
               time: {
                 Seconds: {
                   show: true,
                   text: "Inhale",
                   color: "#60686F"}
                 }});
-                
-                $(".breathTimer").attr('data-timer','inhaleTimer');
-                $(".breathTimer").attr('total_duration','inhaleTimer');
+
+                $(".breathTimer").data('timer',inhaleTimer);
                 $(".breathTimer").attr('mode','inhale');
               }
 

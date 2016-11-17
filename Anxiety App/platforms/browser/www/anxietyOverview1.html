@@ -44,7 +44,7 @@
 <!--      <link rel="stylesheet" type="text/css" href="css/index.css" />
  -->
 
-    <title>Anxeity App</title>
+    <title>Anxiety Overview</title>
 </head>
 
 
@@ -56,39 +56,49 @@
         </div> -->
   <body ng-controller="MyCtrl">
 
-<ion-pane>
-        <ion-header>
+    <ion-pane>
+      <ion-header>
         <div class="bar bar-header bar-stable">
-            <a class="button icon-left ion-chevron-left button-clear button-dark " onclick="back()">Back</a>
+          <a class="button icon-left ion-chevron-left button-clear button-dark " onclick="back()">Back</a>
 
-             <h1 class="title">Anxiety App</h1>
+          <h1 class="title">Anxiety Overview</h1>
         </div>
-        </ion-header>
-    
-    <ion-content class="has-header bg">
-        <div class = "row centerTop">
+      </ion-header>
 
-            <div class="col-80 col-offset-10 text-center">
-                <p style = "color:white"> Anxiety Overview</p>
+      <ion-content class="has-header bg">
+        <div class = "row">
+
+          <div class="col-80 col-offset-10 text-center">
+            <h2 style = "color:white"><u>Anxiety Overview</u></h2>
             <div class="text-left"style = "color:white">
 
-<b> It's a normal part of life to experience occasional anxiety</b></br>
-But you may experience anxiety that is persistent, seemingly uncontrollable, and overwhelming. If it’s an excessive, irrational dread of everyday situations, it can be disabling. When anxiety interferes with daily activities, you may have an anxiety disorder.
+              <b>It's a normal part of life to experience occasional anxiety</b></br>
+              But you may experience anxiety that is persistent, seemingly uncontrollable, and overwhelming.
+              If it’s an excessive, irrational dread of everyday situations, it can be disabling. When anxiety interferes with daily activities, you may have an anxiety disorder.
+              <br><br>
 
-The term "anxiety disorder" includes generalized anxiety disorder (GAD),  panic disorder and panic attacks, agoraphobia, social anxiety disorder, selective mutism, separation anxiety, and specific phobias.
+              The term "anxiety disorder" includes generalized anxiety disorder (GAD),  panic disorder and panic attacks,
+              agoraphobia, social anxiety disorder, selective mutism, separation anxiety, and specific phobias.
+              <br><br>
 
-Obsessive-compulsive disorder (OCD) and posttraumatic stress disorder (PTSD) are closely related to anxiety disorders, which some may experience at the same time as depression.
+              Obsessive-compulsive disorder (OCD) and posttraumatic stress disorder (PTSD) are closely related to anxiety disorders,
+              which some may experience at the same time as depression.
+              <br><br>
 
-Depression is a condition in which a person feels discouraged, sad, hopeless, unmotivated, or disinterested in life in general for more than two weeks and when the feelings interfere with daily activities. Major depression is a treatable illness that affects the way a person thinks, feels, behaves, and functions. At any point in time, 3 to 5 percent of people suffer from major depression; the lifetime risk is about 17 percent.
+              Depression is a condition in which a person feels discouraged, sad, hopeless, unmotivated, or disinterested in life in general for more than two weeks and when the feelings interfere with daily activities.
+              Major depression is a treatable illness that affects the way a person thinks, feels, behaves, and functions.
+              <br><br>
 
-</div>
-
+              At any point in time, 3 to 5 percent of people suffer from major depression; the lifetime risk is about 17 percent.
+              <br>
             </div>
+
+          </div>
         </div>
 
 
-    </ion-content>
-</ion-pane>
+      </ion-content>
+    </ion-pane>
 </body>
 
     <script type="text/javascript" src="cordova.js"></script>
@@ -105,7 +115,7 @@ angular.module('anxietyApp', ['ionic'])
 
 .controller('MyCtrl', function($scope) {
 
-    
+
 });
 </script>
 

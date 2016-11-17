@@ -63,7 +63,7 @@
           <h4 style = "color:white"><u><b>My Stats</b></u></h4>
           <div id="stats"></div>
 
-          <p>additional metrics should be listed here</p><br>
+          <br>
 
           <h4 style = "color:white"><u><b>My History</b></u></h4>
           <canvas id="historyChart" width="40" height="40"></canvas>
@@ -96,6 +96,10 @@
       stats += '<u>Current SUD:</u> ' + getCurrentSUD().SUD + '<br>';
       stats += '<u>Last Entry:</u> ' + getJsDateFromJSON(getCurrentSUD().date).toLocaleString() + '<br>';
       stats += '<u>Reason for Entry:</u> ' + getCurrentSUD().reason + '<br>';
+
+      var sudHistory = JSON.parse(localStorage.getItem("sudHistory"));
+
+      stats += '<u>Total SUD Entries:</u> ' + sudHistory.length + '<br>';
 
       if (!(getAverageSUD() === null)) {
         stats += '<u>Average SUD:</u> ' + getAverageSUD().toFixed(2) + '<br>';
