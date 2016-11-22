@@ -48,71 +48,72 @@
 
   <body ng-controller="MyCtrl">
 
-<ion-pane>
-        <ion-header>
+    <ion-pane>
+      <ion-header>
         <div class="bar bar-header bar-stable">
-            <a class="button icon-left ion-chevron-left button-clear button-dark " onclick="back()">Back</a>
-             <h1 class="title">Resources</h1>
+          <a class="button icon-left ion-chevron-left button-clear button-dark " onclick="back()">Back</a>
+          <h1 class="title">Resources</h1>
         </div>
-        </ion-header>
+      </ion-header>
 
-    <ion-content class="has-header bg">
+      <ion-content class="has-header bg">
         <div class = "row">
 
-            <div class="text-left"style = "color:white">
-               <h2 style = "color:white"><u>Sites</u></h2>
-
-	          No one wants to experience a crisis, but they do happen. Fortunately, there are people and organizations willing and able to help.
+          <div class="text-left"style = "color:white">
+            <h2 style = "color:white"><u>Sites</u></h2>
+            <ul>
+              <li><a onclick="browseToURL('http://www.crisischat.org')">Crisis chat support</a> is available at Online Hotline. Free help, 24/7</li>
+            </ul>
+            <!--No one wants to experience a crisis, but they do happen. Fortunately, there are people and organizations willing and able to help.
             <br><br>
 
             Use these resources if you or someone you know is experiencing a crisis.
             It’s important to identify the correct options and seek help quickly in a crisis situation.
             <br><br><br>
 
-		          NAMI, the National Alliance on Mental Illness, is the nation’s largest grassroots mental health organization dedicated to building better
-              lives for the millions of Americans affected by mental illness.
-              <br><br>
+            NAMI, the National Alliance on Mental Illness, is the nation’s largest grassroots mental health organization dedicated to building better
+            lives for the millions of Americans affected by mental illness.
+            <br><br>
 
-              The National Suicide Prevention Lifeline connects you with a crisis center in the Lifeline network closest to your location.
-              <br><br>
+            The National Suicide Prevention Lifeline connects you with a crisis center in the Lifeline network closest to your location.
+            <br><br>
 
-              Your call will be answered by a trained crisis worker who will listen empathetically and without judgment.
-              The crisis worker will work to ensure that you feel safe and help identify options and information about mental health services in your area.
-              <br><br>
+            Your call will be answered by a trained crisis worker who will listen empathetically and without judgment.
+            The crisis worker will work to ensure that you feel safe and help identify options and information about mental health services in your area.
+            <br><br>
 
-              Your call is confidential and free.
-              <br><br>
+            Your call is confidential and free.
+            <br><br>
 
-              A  crisis plan is a document that contains important information and outlines how to respond to a crisis situation.
-              <br>
-              Many healthcare providers require patients to create a crisis plan that include:
-              <br><br>
+            A  crisis plan is a document that contains important information and outlines how to respond to a crisis situation.
+            <br>
+            Many healthcare providers require patients to create a crisis plan that include:
+            <br><br>
 
-              <ul>
-<li>- phone numbers of mental health professions, family members and friends</li>
-<li>- a list of current prescription medications, doses and diagnosis</li>
-<li>- any history of suicide attempts, psychosis or drug use history</li>
-<li>- triggers and coping mechanism that have helped in the past</li>
-	       </ul>
-		<br><br>
-
-
-               <h2 style = "color:white"><u>Hotlines</u></h2>
-
-	       <ul>
-          <li>Kean University Counseling Services – Call <a onclick="callNumber('9087374850')">908-737-4850</a></li>
-	       	<li>National Suicide Prevention Lifeline – Call <a onclick="callNumber('8002738255')">800-273-TALK (8255)</a></li>
-	       	<li>Crisis Text Line – Text NAMI to <a onclick="sendSms('741741', 'NAMI')">741-741</a></li>
-	       	<li><a onclick="browseToURL('http://www.crisischat.org')">Crisis chat support</a> is available at Online Hotline. Free help, 24/7</li>
-	       </ul>
+            <ul>
+            <li>- phone numbers of mental health professions, family members and friends</li>
+            <li>- a list of current prescription medications, doses and diagnosis</li>
+            <li>- any history of suicide attempts, psychosis or drug use history</li>
+            <li>- triggers and coping mechanism that have helped in the past</li>
+          </ul>-->
+          <br><br>
 
 
-            </div>
+          <h2 style = "color:white"><u>Hotlines</u></h2>
+
+          <ul>
+            <li>Kean University Counseling Services – Call <a onclick="callNumber('9087374850')">908-737-4850</a></li>
+            <li>National Suicide Prevention Lifeline – Call <a onclick="callNumber('8002738255')">800-273-TALK (8255)</a></li>
+            <li>Crisis Text Line – Text NAMI to <a onclick="sendSms('741741', 'NAMI')">741-741</a></li>
+          </ul>
+
+
         </div>
+      </div>
 
 
     </ion-content>
-</ion-pane>
+  </ion-pane>
 </body>
 
 

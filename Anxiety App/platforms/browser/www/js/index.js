@@ -55,23 +55,30 @@ function infoSwitch(){
 }
 
 function back(){
-/*    history.go(-1);
-*/    navigator.app.backHistory();
+    history.go(-1);
+    // navigator.app.backHistory();
 }
 
 function track(){
     localStorage.setItem("reason", "track");
-        window.location.href = "sudTrack.html";
+    gotoPage("sudTrack.html");
 
 }
 
 function startBreathing(){
-  var durationOfExercise = document.getElementById("duration").value;
+  //var durationOfExercise = document.getElementById("duration").value;
   var lengthOfInhale = document.getElementById("inhaleL").value;
   var lengthOfExhale = document.getElementById("exhaleL").value;
 
+  if (lengthOfInhale <= 0) {
+    lengthOfInhale = 1;
+  }
 
-  gotoPage("breathingExercise.html?time=" + durationOfExercise + '&inhale=' + lengthOfInhale + '&exhale=' + lengthOfExhale);
+  if (lengthOfExhale <= 0) {
+    lengthOfExhale = 1;
+  }
+
+  gotoPage("breathingExercise.html?inhale=" + lengthOfInhale + '&exhale=' + lengthOfExhale);
 
 }
 
@@ -129,14 +136,14 @@ function gotoPage(page) {
 function breathing(){
 
     localStorage.setItem("reason", "breathing");
-    window.location.href = "sudTrack.html";
+    gotoPage("sudTrack.html");
 
 }
 
 function mindfulness(){
 
     localStorage.setItem("reason", "mindfulness");
-    window.location.href = "sudTrack.html";
+    gotoPage("sudTrack.html");
 
 }
 
@@ -145,7 +152,7 @@ function mindfulness(){
 function finish(reason){
    // alert("Congrats!\nYou finished x minutes of breathing exercise!\nPlease track your current SUD on the next screen");
     localStorage.setItem("reason", reason);
-    window.location.href = "sudTrack.html";
+    gotoPage("sudTrack.html");
 }
 
 
